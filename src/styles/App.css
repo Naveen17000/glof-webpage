@@ -1,0 +1,137 @@
+.App {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  text-align: center;
+}
+
+.sensor-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 1em;
+}
+
+.graph-container {
+  margin-top: 40px;
+}
+/* Default Sensor Box Style */
+.sensor-box {
+  background: linear-gradient(135deg, #f3f3f3, #e9e9e9);
+  border-radius: 12px;
+  padding: 20px;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sensor-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.sensor-box h3 {
+  margin: 10px 0;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.sensor-box p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+
+.sensor-box i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #4CAF50;
+}
+
+
+.sensor-box.water-temperature {
+  background: linear-gradient(135deg, #ffebcc, #ffcc99);
+}
+
+.sensor-box.humidity {
+  background: linear-gradient(135deg, #ccf2ff, #99e6ff);
+}
+
+.sensor-box.x-axis,
+.sensor-box.y-axis,
+.sensor-box.z-axis {
+  background: linear-gradient(135deg, #e6ffe6, #ccffcc);
+}
+
+/* Icon Colors */
+.sensor-box.location i {
+  color: #ff4d4d;
+}
+
+.sensor-box.water-temperature i {
+  color: #ff8c1a;
+}
+
+.sensor-box.humidity i {
+  color: #33aaff;
+}
+
+.sensor-box.x-axis i,
+.sensor-box.y-axis i,
+.sensor-box.z-axis i {
+  color: #4CAF50;
+}
+
+
+.sensor-box h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.sensor-box p {
+  font-size: 1rem;
+  color: #555;
+}
+header {
+  background-color: #4CAF50;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.time-range-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.time-range-container label {
+  font-size: 16px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.time-range-container select {
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.time-range-container select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
+}
+
