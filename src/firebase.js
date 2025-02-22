@@ -8,14 +8,14 @@ import { getDatabase } from "firebase/database";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBot8wCeoJh9TkBdPunC5-or18lJlzbzK0",
-  authDomain: "glacier-breakdown-detection.firebaseapp.com",
-  databaseURL: "https://glacier-breakdown-detection-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "glacier-breakdown-detection",
-  storageBucket: "glacier-breakdown-detection.firebasestorage.app",
-  messagingSenderId: "117459328945",
-  appId: "1:117459328945:web:5a29adf54a8f8d50342790",
-  measurementId: "G-S4NK8VQFJL"
+  apiKey: "AIzaSyAjFfKHonv8ThsrCfQr24YM1IMX760V3IM",
+  authDomain: "glof-detection.firebaseapp.com",
+  databaseURL: "https://glof-detection-default-rtdb.asia-southeast1.firebasedatabase.app",
+  projectId: "glof-detection",
+  storageBucket: "glof-detection.firebasestorage.app",
+  messagingSenderId: "149181276909",
+  appId: "1:149181276909:web:40ddd6ff22db3e17d022e4",
+  measurementId: "G-NSZQMS260S"
 };
 
 // Initialize Firebase
