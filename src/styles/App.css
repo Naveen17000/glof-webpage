@@ -1,40 +1,106 @@
+/* General Styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  font-family: Arial, sans-serif;
-  padding: 20px;
+  min-height: 100vh;
+  padding: 2vh;
   text-align: center;
 }
 
+/* Header */
+header {
+  background-color: rgb(230, 228, 228);
+  padding: 1.5rem;
+  color: #2d6e63;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 2vh;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+/* Sensor Container */
 .sensor-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  gap: 1.5rem;
   justify-content: center;
   padding: 1em;
 }
 
-.graph-container {
-  margin-top: 40px;
+.sensor-container h2{
+  text-align: left;
 }
-/* Default Sensor Box Style */
+
+.sensor-grid1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.sensor-grid2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  max-width: 70%;
+}
+
+.sensor-container .line-break {
+  flex-basis: 100%;
+  height: 0;
+}
+
+/* Sensor Box */
 .sensor-box {
-  background: linear-gradient(135deg, #f3f3f3, #e9e9e9);
+  background-color: rgb(230, 228, 228);
   border-radius: 12px;
-  padding: 20px;
-  width: 220px;
+  padding: 1.5rem 0.2rem;
   text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
 }
 
 .sensor-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.locatio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.location h3{
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #2d6e63;
+}
+
+.prediction h3{
+  margin: 10px 0;
+  font-size: 1.5rem;
+  color: #2d6e63;
 }
 
 .sensor-box h3 {
   margin: 10px 0;
-  font-size: 1.4rem;
-  color: #333;
+  font-size: 1.5rem;
+  color: #2d6e63;
 }
 
 .sensor-box p {
@@ -42,96 +108,280 @@
   color: #555;
 }
 
+.location p{
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.oprediction p{
+  font-size: 1.1rem;
+  color: #555;
+}
 
 .sensor-box i {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: #4CAF50;
+  color: #2d6e63;
 }
 
-
-.sensor-box.water-temperature {
-  background: linear-gradient(135deg, #ffebcc, #ffcc99);
+.location i{
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #2d6e63;
 }
 
-.sensor-box.humidity {
-  background: linear-gradient(135deg, #ccf2ff, #99e6ff);
+/* Container */
+/* Graph Container */
+.graph-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 4vh;
 }
 
-.sensor-box.x-axis,
-.sensor-box.y-axis,
-.sensor-box.z-axis {
-  background: linear-gradient(135deg, #e6ffe6, #ccffcc);
+.graph-wrapper {
+  background-color: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #000000;
+  flex: 1;
 }
 
-/* Icon Colors */
-.sensor-box.location i {
-  color: #ff4d4d;
-}
-
-.sensor-box.water-temperature i {
-  color: #ff8c1a;
-}
-
-.sensor-box.humidity i {
-  color: #33aaff;
-}
-
-.sensor-box.x-axis i,
-.sensor-box.y-axis i,
-.sensor-box.z-axis i {
-  color: #4CAF50;
-}
-
-
-.sensor-box h3 {
+/* Remove individual graph container styles */
+.graph-container1, .graph-container2 {
+  max-width: 100%;
   margin: 0;
-  font-size: 1.2rem;
 }
 
-.sensor-box p {
+/* Sidebar Navigation */
+.toggle-nav-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #2d6e63;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 1000;
+}
+
+.close-nav-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #2d6e63;
+  position: absolute;
+  top: 20px; /* Adjusted from 10px to 20px */
+  right: 20px; /* Adjusted from 15px to 20px */
+}
+
+/* Sidebar Navigation */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initially hidden */
+  width: 220px;
+  height: 100vh;
+  background-color: white;
+  padding: 20px;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
+  border-right: 1px solid #e0e0e0;
+  transition: left 0.3s ease-in-out;
+  z-index: 1000; /* Ensure sidebar is above other content */
+}
+
+.side-nav.open {
+  left: 0; /* Slide in */
+}
+
+.nav-button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #2d6e63;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
   font-size: 1rem;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-button.active {
+  background-color: #1f4d47;
+}
+
+.nav-button:hover {
+  background-color: #1a403b;
+  transform: translateY(-2px);
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  margin-left: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  transition: margin-left 0.3s ease-in-out;
+  z-index: 500; /* Ensure main content is below the sidebar */
+}
+
+.App.nav-open .main-content {
+  margin-left: 250px; /* Adjust when sidebar is open */
+}
+
+/* Satellite View */
+.satellite-view {
+  padding: 2rem;
+  background-color: #edf7f3;
+  border-radius: 12px;
+  color: #2d6e63;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.location{
+  background-color:#edf7f3;  ;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 20%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  margin-left: 530px;
+}
+
+.prediction{
+  background-color:#edf7f3;  ;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 20%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  margin-left: 545px;
+}
+
+.satellite-view h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  color: #2d6e63;
+}
+
+.satellite-view p {
+  font-size: 1.1rem;
   color: #555;
 }
-header {
-  background-color: #4CAF50;
-  padding: 20px;
-  color: white;
-  text-align: center;
-  border-radius: 8px;
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .side-nav {
+    width: 80%;
+    margin-bottom: 2vh;
+  }
+
+  .main-content {
+    max-width: 90%;
+  }
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2rem;
+@media (max-width: 768px) {
+  header {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .sensor-box {
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  .side-nav {
+    width: 100%;
+    left: -100%;
+    z-index: 1000; /* Ensure sidebar is above other content */
+  }
+
+  .side-nav.open {
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+  }
+
+  .App.nav-open .main-content {
+    margin-left: 0; /* Ensure content doesn't shift on mobile */
+  }
+
+  .main-content {
+    width: 100%;
+    z-index: 500; /* Ensure main content is below the sidebar */
+  }
 }
 
+/* Time Range Selection */
 .time-range-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
 }
 
 .time-range-container label {
-  font-size: 16px;
-  margin-right: 10px;
+  font-size: 1rem;
+  margin-right: 1rem;
   font-weight: bold;
+  color: #2d6e63;
 }
 
-.time-range-container select {
-  padding: 8px 12px;
-  font-size: 14px;
-  border: 1px solid #007bff;
+.time-range-container .custom-select {
+  padding: 0.70rem 1.2rem; /* Increased padding */
+  font-size: 1.25rem; /* Increased font size */
+  border: 1px solid #2d6e63;
   border-radius: 5px;
   outline: none;
   cursor: pointer;
-  background-color: #f9f9f9;
+  background-color: white;
   color: #333;
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="%23333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><path d="M6 9l6 6 6-6"/></svg>');
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Adjusted position */
+  background-size: 14px 14px;
+  transition: all 0.3s ease; /* Smooth transition */
 }
 
-.time-range-container select:focus {
-  border-color: #0056b3;
-  box-shadow: 0 0 5px rgba(0, 91, 187, 0.5);
+.time-range-container .custom-select:focus {
+  border-color: #1a403b;
+  box-shadow: 0 0 5px rgba(42, 157, 143, 0.5);
 }
 
+.time-range-container .custom-select:hover {
+  border-color: #2d6e63;
+  background-color: #f9f9f9;
+}
+
+/* Center the dropdown container */
+.time-range-container {
+  justify-content: center;
+}
